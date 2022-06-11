@@ -1,0 +1,377 @@
+/*-----------------*/
+/* Reset           */
+/*-----------------*/
+/*Box sizing*/
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Reset margins*/
+body, h1, h2, h3, h4, h5, h6, p, figure, picture {
+  margin: 0;
+}
+
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration: none;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*-----------------*/
+/* Utilities       */
+/*-----------------*/
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+}
+
+.container, .container-small {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.container-small {
+  max-width: 375px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  background: #0f1424;
+}
+
+/*Typography*/
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.text-white, .text-offWhite {
+  color: white;
+}
+
+.text-offWhite {
+  opacity: 0.6;
+}
+
+/*Card*/
+.top-layer {
+  z-index: 1;
+}
+
+.card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card .card__header {
+  background: #5847eb;
+  border-radius: 15px;
+}
+
+.card .card__header .card__heading {
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card__header .card__heading .profile-image {
+  border: solid 3px white;
+  border-radius: 50%;
+  width: 75px;
+  margin-right: 2rem;
+}
+
+.card .card__header .card__heading .profile-name > p:nth-child(2) {
+  font-size: 22px;
+}
+
+.card .card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: white;
+  padding: 2rem;
+}
+
+.card-profile {
+  background: #1c1f4a;
+}
+
+.card-profile a {
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.card-profile a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-profile a.active {
+  color: #fff;
+}
+
+.card-hours {
+  position: relative;
+}
+
+.card-hours .card__body {
+  position: relative;
+  background: #1c1f4a;
+  margin-top: 3.5rem;
+  z-index: 1;
+  padding: 3rem 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-hours .card__body .title, .card-hours .card__body .hours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-hours .card__body .title > img {
+  height: 5px;
+}
+
+.card-hours .card__body .hours > span:nth-child(1) {
+  font-size: 48px;
+}
+
+.card-hours .card__body .hours > span:nth-child(2) {
+  font-size: 13px;
+}
+
+.card-hours .card__body:hover {
+  background: #292f70;
+}
+
+.card-icon {
+  position: absolute;
+  right: 20px;
+  top: -8px;
+  height: 55px;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+  z-index: 0;
+}
+
+.work {
+  background: #ff8c66;
+  grid-area: card1;
+}
+
+.play {
+  background: #56c2e6;
+  grid-area: card2;
+}
+
+.study {
+  background: #ff5c7c;
+  grid-area: card3;
+}
+
+.exercise {
+  background: #4acf81;
+  grid-area: card4;
+}
+
+.social {
+  background: #7536d3;
+  grid-area: card5;
+}
+
+.selfcare {
+  background: #f1c65b;
+  grid-area: card6;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 4rem 0;
+}
+
+.grid__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin: 0;
+  }
+  .container-small {
+    max-width: 1440px;
+  }
+  .grid {
+    -ms-grid-columns: 25% 75%;
+        grid-template-columns: 25% 75%;
+    width: 1000px;
+    gap: 0 2.5rem;
+  }
+  .grid__cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "card1 card2 card3" "card4 card5 card6";
+    gap: 2.5rem;
+  }
+  .card-profile {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / span 2;
+  }
+  .card-profile .card__heading img {
+    margin-bottom: 4rem;
+  }
+  .card-profile .card__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-profile .card__body div {
+    margin-bottom: 1.5rem;
+  }
+  .card-hours .card__body {
+    height: 200px;
+  }
+  .card-hours .card__body .hours {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .card .card__header {
+    height: 70%;
+  }
+  .card .card__header .card__heading {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .card .card__header .card__heading .profile-name > p:last-child {
+    font-size: 4rem;
+    line-height: 1;
+    margin-top: 1rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- displays site properly based on user's device -->
+
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="./images/favicon-32x32.png"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="/css/index.css" />
+
+      <title>Frontend Mentor | Time tracking dashboard</title>
+
+      <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+      <style>
+         .attribution {
+            font-size: 11px;
+            text-align: center;
+         }
+         .attribution a {
+            color: hsl(228, 45%, 44%);
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="container-small grid">
+            <div class="card card-profile" class="text-white">
+               <div class="card__header">
+                  <div class="card__heading">
+                     <img
+                        src="/images/image-jeremy.png"
+                        alt=""
+                        class="profile-image"
+                     />
+                     <div class="profile-name">
+                        <p class="text-offWhite fw-300">Report for</p>
+                        <p class="text-white fw-300">Jeremy Robson</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card__body">
+                  <div>
+                     <a id="daily" onclick="handleClick(this)" class="active"
+                        >Daily</a
+                     >
+                  </div>
+                  <div>
+                     <a id="weekly" onclick="handleClick(this)">Weekly</a>
+                  </div>
+                  <div>
+                     <a id="monthly" onclick="handleClick(this)">Monthly</a>
+                  </div>
+               </div>
+            </div>
+            <div id="cards" class="grid__cards"></div>
+         </div>
+      </div>
+
+      <div class="attribution">
+         Challenge by
+         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+         >. Coded by <a href="#">Richard Suttie</a>.
+      </div>
+      <script src="/js/index.js"></script>
+   </body>
+</html>

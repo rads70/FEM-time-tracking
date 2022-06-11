@@ -1,0 +1,202 @@
+@import reset
+@import utilities
+
+$cl-primary-blue: hsl(246, 80%, 60%)
+
+$cl-primary-lightRed: hsl(15, 100%, 70%)
+$cl-primary-softBlue: hsl(195, 74%, 62%)
+$cl-primary-studyRed: hsl(348, 100%, 68%)
+$cl-primary-limeGreen: hsl(145, 58%, 55%)
+$cl-primary-Violet: hsl(264, 64%, 52%)
+$cl-primary-softOrange: hsl(43, 84%, 65%)
+
+$cl-neutral-veryDarkBlue: hsl(226, 43%, 10%)
+$cl-neutral-darkBlue: hsl(235, 46%, 20%)
+$cl-neutral-darkBlue-lighter: hsl(235, 46%, 30%)
+$cl-neutral-desaturatedBlue: hsl(235, 45%, 61%)
+$cl-neutral-paleBlue: hsl(236, 100%, 87%)
+
+$ff-font: 'Rubik', sans-serif
+$fs-card-titles: 18px
+
+
+body
+      font-family: $ff-font
+      font-size: 16px
+      background: hsl(hue($cl-neutral-veryDarkBlue), saturation($cl-neutral-veryDarkBlue), lightness($cl-neutral-veryDarkBlue))
+
+/*Typography*/
+.fw-300
+      font-weight: 300
+.fw-400
+      font-weight: 400
+.fw-500
+      font-weight: 500
+.text-white
+      color: white
+.text-offWhite
+      @extend .text-white
+      opacity: 0.6
+
+
+/*Card*/
+.top-layer
+      z-index: 1
+
+.card
+      width: 100%
+      border-radius: 15px
+      overflow: hidden
+      cursor: pointer
+     
+      
+      .card__header
+            background: hsl(hue($cl-primary-blue), saturation($cl-primary-blue), lightness($cl-primary-blue))
+            border-radius: 15px
+
+            .card__heading
+                  padding: 3rem
+                  display: flex
+                  align-items: center
+                  .profile-image
+                        border: solid 3px white
+                        border-radius: 50%
+                        width: 75px
+                        margin-right: 2rem
+                  .profile-name
+                        > p:nth-child(2)
+                              font-size: 22px
+           
+            
+      .card__body
+            display: flex
+            justify-content: space-around
+            color: white
+            padding: 2rem
+
+.card-profile
+      background: hsl(hue($cl-neutral-darkBlue),saturation($cl-neutral-darkBlue),lightness($cl-neutral-darkBlue))
+      
+      a
+           color: rgba(255,255,255, 0.2)
+           cursor: pointer
+           &:hover
+                 color: rgba(255,255,255 ,0.8 )
+      a.active
+            color: #fff
+      
+            
+.card-hours
+      position: relative
+     
+      .card__body
+            position: relative
+            background: hsl(hue($cl-neutral-darkBlue),saturation($cl-neutral-darkBlue),lightness($cl-neutral-darkBlue))
+            margin-top: 3.5rem
+            z-index: 1
+            padding: 3rem 2rem
+            flex-direction: column
+          
+            .title, .hours
+                  display: flex
+                  justify-content: space-between 
+                  align-items: center 
+            .title
+                 
+                  > img
+                        height: 5px
+            .hours
+                  > span:nth-child(1)          
+                        font-size: 48px
+                  > span:nth-child(2)          
+                        font-size: 13px
+      .card__body:hover
+                     background: hsl(hue($cl-neutral-darkBlue-lighter),saturation($cl-neutral-darkBlue-lighter),lightness($cl-neutral-darkBlue-lighter))         
+                  
+.card-icon
+     position: absolute
+     right: 20px
+     top: -8px
+     height: 55px
+     transform: rotate(2deg)
+     z-index: 0
+   
+.work   
+      background: hsl(hue($cl-primary-lightRed),saturation($cl-primary-lightRed),lightness($cl-primary-lightRed))             
+      grid-area: card1
+.play
+      background: hsl(hue($cl-primary-softBlue),saturation($cl-primary-softBlue),lightness($cl-primary-softBlue))             
+      grid-area: card2
+.study
+      background: hsl(hue($cl-primary-studyRed),saturation($cl-primary-studyRed),lightness($cl-primary-studyRed))             
+      grid-area: card3
+.exercise
+      background: hsl(hue($cl-primary-limeGreen),saturation($cl-primary-limeGreen),lightness($cl-primary-limeGreen))             
+      grid-area: card4
+.social
+      background: hsl(hue($cl-primary-Violet),saturation($cl-primary-Violet),lightness($cl-primary-Violet))             
+      grid-area: card5
+.selfcare
+      background: hsl(hue($cl-primary-softOrange),saturation($cl-primary-softOrange),lightness($cl-primary-softOrange))             
+      grid-area: card6
+
+.wrapper
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      min-height: 100vh
+      margin: 4rem 0
+
+.grid__cards
+      display: flex
+      flex-direction: column
+      width: 100%
+      gap: 2rem
+     
+
+@media screen and (min-width: 768px) 
+      .wrapper
+            margin: 0
+      .container-small
+            max-width: 1440px
+      .grid
+            grid-template-columns: 25% 75%
+            width: 1000px
+            gap: 0 2.5rem
+            
+      .grid__cards
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-template-rows: 1fr 1fr
+            grid-template-areas: "card1 card2 card3""card4 card5 card6"
+            gap: 2.5rem
+      .card-profile
+            grid-row: 1 / span 2
+            .card__heading 
+                  img
+                        margin-bottom: 4rem
+                 
+            .card__body
+                  flex-direction: column
+                  div
+                        margin-bottom: 1.5rem
+      .card-hours
+            .card__body
+                  height: 200px
+                  .hours
+                        flex-direction: column
+                        justify-content: flex-start
+                        align-items: flex-start
+      .card
+            .card__header
+                  height: 70%
+                  .card__heading
+                        flex-direction: column
+                        justify-content: flex-start
+                        align-items: flex-start
+
+                        .profile-name > p:last-child()
+                              font-size: 4rem
+                              line-height: 1
+                              margin-top: 1rem
